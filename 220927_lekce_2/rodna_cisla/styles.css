@@ -1,0 +1,15 @@
+#cifry{
+    display: flex;
+    column-gap: 1ex;
+}
+
+.green {
+    background-color: #00DD00;
+    padding: 10px;
+}
+
+
+.red {
+    background-color: #FF8686;
+    padding: 10px;
+}
