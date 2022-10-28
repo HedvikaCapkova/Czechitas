@@ -1,21 +1,20 @@
-export const Movie = (props) => {
-    const { posterUrl, title, year, url } = props;
-  
-    return `
-          <li class="movie-detail">
-            <div class="movie-poster">
-              <img 
-                src="${posterUrl}"
-                alt="Vykoupení z věznice Shawshank"
-              />
-            </div>
-            <div class="movie-info">
-              <h2 class="movie-title">${title}</h2>
-              <div class="movie-year">Rok vydání: ${year}</div>
-              <div class="movie-link">
-                <a href="${url}" target="_blank">Odkaz na CSFD</a>
-              </div>
-            </div>
-          </li>
-          `;
-  };
+const element = document.getElementById("myBtn");
+element.addEventListener("click", displaySunTime);
+
+const displaySun = (data) => {
+    const sunsetElement = document.querySelector('.sunset');
+    sunsetElement.textContent = data.results.sunset;
+    const sunriseElement = document.querySelector('.sunrise');
+    sunriseElement.textContent = data.results.sunrise;
+}
+
+
+
+
+function displaySunTime() {
+    fetch("https://api.sunrise-sunset.org/json?lat=50&lng=14.5")
+    .then((response) => response.json()
+    ).then(displaySun);
+} 
+
+
