@@ -2,7 +2,13 @@ console.log('funguju!');
 
 import { Bulb } from './komponenta/index.js';
 
-const bulbElm1 = Bulb({isOn:true});
+const bulbElm = Bulb({isOn:true});
 
 const appElm = document.querySelector('#app');
-appElm.append(bulbElm1);
+appElm.append(bulbElm);
+
+const clickBulb = document.querySelector('.bulb');
+clickBulb.addEventListener("click", () => {
+    bulbElm.classList.toggle('bulb--on');
+});
+
