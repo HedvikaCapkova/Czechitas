@@ -1,6 +1,12 @@
 //parek v rohliku
-const hlasujButton = document.querySelector("button");
-hlasujButton.onclick = () => {
+
+const hlasujForm = document.querySelector("form");
+
+hlasujForm.onsubmit = (event) => {
+    event.preventDefault();
+    const jmeno = document.querySelector("#jmeno").value;
+    console.log(jmeno);
+
     fetch('https://apps.kodim.cz/daweb/hlasovani/api/poll/1', {
         method: 'POST',
         headers: {
@@ -8,7 +14,7 @@ hlasujButton.onclick = () => {
         },
         body: JSON.stringify({
           optionId: 1,
-          voterName: 'Hedvika',
+          voterName: jmeno,
         }),
       });
 };
