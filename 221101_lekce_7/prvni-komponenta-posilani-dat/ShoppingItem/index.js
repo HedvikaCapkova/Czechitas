@@ -14,11 +14,20 @@ export const ShoppingItem = (props) => {
     <button class="item__btn-done ${checkClass}"></button>
   `;
 
-  const inputElm = document.querySelector(".item__name");
-  inputElm.addEventListener("change", () => {
-    console.log(inputElm);
+  element.querySelector(".item__name").addEventListener("change", () => {
+    console.log(element.value);
+
+    fetch(`https://apps.kodim.cz/daweb/shoplist/api/weeks/8/days/mon/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ amount: element.value }),
+    }).then((response) => response.json())
+      .then((data) => element.replaceWith(ShoppingItem(data.results)));
   });
   
+
 
   element.querySelector('button').addEventListener('click', () => {
     fetch(`https://apps.kodim.cz/daweb/shoplist/api/weeks/8/days/mon/${id}`, {
