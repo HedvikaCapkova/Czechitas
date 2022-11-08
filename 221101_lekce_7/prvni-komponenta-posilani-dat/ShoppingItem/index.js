@@ -4,6 +4,13 @@ export const ShoppingItem = (props) => {
   const element = document.createElement('li');
   element.classList.add('item');
   element.innerHTML = `
+  <form>
+        <input class="new_item" type="text"/>
+        <input type="number"
+        <button type="submit">Add item</button>
+    </form>
+  <input type="text"></input>
+
     <input type="number" min="0" class="item__name" value="${amount}"/>
     <div class="product">${product}</div>
     <div class="item__amount">${amount} ${unit}</div>
