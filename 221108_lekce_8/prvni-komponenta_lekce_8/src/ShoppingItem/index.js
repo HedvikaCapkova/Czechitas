@@ -18,7 +18,6 @@ export const ShoppingItem = (props) => {
     <button class="btn-delete item__btn icon-cross"></button>
     <button class="btn-arrow-up item__btn icon-arrow-up"></button>
     <button class="btn-arrow-down item__btn icon-arrow-down"></button>
-
   `;
   element.querySelector('.btn-check').addEventListener('click', () => {
     fetch(`https://apps.kodim.cz/daweb/shoplist/api/weeks/8/days/${day}/${id}`, {
