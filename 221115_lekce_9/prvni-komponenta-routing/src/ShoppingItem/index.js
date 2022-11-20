@@ -21,7 +21,7 @@ export const ShoppingItem = (props) => {
     fetch(`https://apps.kodim.cz/daweb/shoplist/api/me/week/${day}/items/${id}`, {
       method: 'PATCH',
       headers: {
-        'Authorisation': 'Basic hedvika.capkova@gmail.com:12345678',
+        'Authorization': 'Basic hedvika.capkova@gmail.com:12345678',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ done: !done }),
