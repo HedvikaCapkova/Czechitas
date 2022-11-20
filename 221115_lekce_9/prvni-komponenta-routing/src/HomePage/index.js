@@ -1,5 +1,4 @@
 import { ShoppingList } from '../ShoppingList/index.js';
-import './style.css';
 
 export const HomePage = () => {
   const element = document.createElement('div');

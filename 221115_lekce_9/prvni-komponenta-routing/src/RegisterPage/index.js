@@ -41,7 +41,7 @@ export const RegisterPage = (props) => {
         if (data.status === 'success') {
           window.location.href = '/login';
         } else {
-          element.replaceWith(RegisterPage({ error: data.errors[0]}));
+          element.replaceWith(RegisterPage({ error: data.errors[0] }));
         }
       });
   });

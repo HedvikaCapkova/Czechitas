@@ -15,7 +15,7 @@ export const ShoppingList = (props) => {
     fetch(`https://apps.kodim.cz/daweb/shoplist/api/me/week/${day}`, {
       method: 'GET',
       headers: {
-        'Authorisation': 'Basic hedvika.capkova@gmail.com:12345678',
+        'Authorization': 'Basic hedvika.capkova@gmail.com:12345678',
       }
     })
       .then((response) => response.json())
