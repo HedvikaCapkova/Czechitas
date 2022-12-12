@@ -1,5 +1,11 @@
-<section id="gallery" class="gallery">
-        <div class="container">
+import './Gallery.css';
+
+export const Gallery = () => {
+  const element = document.createElement('section');
+  element.classList.add('gallery');
+  element.id = "gallery";
+  element.innerHTML = `
+  <div class="container">
           <div class="gallery__content">
             <h2>Nově otevřeno!</h2>
             <div class="gallery__cols">
@@ -19,4 +25,8 @@
             </div>
           </div>
         </div>
-      </section>
+  `;
+  
+return element;
+
+};
